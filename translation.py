@@ -47,19 +47,22 @@ class Translation(object):
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
-    HELP_BUTTONS = InlineKeyboardMarkup(
-        [[
+    helpbutton = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('👲 About', callback_data='about'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
-    ABOUT_BUTTONS = InlineKeyboardMarkup(
-        [[
+    aboutbutton = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('❔ Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
+         helpbutton = [[
+        InlineKeyboardButton('🏡 Home', callback_data='home'),
+        InlineKeyboardButton('👲 About', callback_data='about'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
+
     )
     IFLONG_FILE_NAME = " Only 64 characters can be named . "
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."

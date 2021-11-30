@@ -45,13 +45,13 @@ class Translation(object):
         InlineKeyboardButton('❔ Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
-    )
+    
     helpbutton = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('👲 About', callback_data='about'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
-    )
+    
     aboutbutton = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('❔ Help', callback_data='help'),

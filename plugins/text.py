@@ -33,3 +33,11 @@ from pyrogram.errors import UserNotParticipant
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
+@Client.on_message(pyrogram.filters.command(["start"]))
+async def text(bot, update):
+    await update.reply_text(script.START_TEXT.format(update.from_user.first_name),
+        reply_markup= START_BUTTONS,
+        parse_mode="html",
+        disable_web_page_preview=True,
+        reply_to_message_id=update.message_id
+    )

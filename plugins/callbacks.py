@@ -5,11 +5,21 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceRepl
 from pyrogram.errors import UserNotParticipant
 
 from translation import Translation
-aboutbutton = [[
-        InlineKeyboardButton(f'🤔 How To Use', callback_data="help"),
-        InlineKeyboardButton(f'Close 🔐', callback_data="close_data")
-    ]]
 
+    HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('🏡 Home', callback_data='home'),
+        InlineKeyboardButton('👲 About', callback_data='about'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
+        ]]
+    )
+    ABOUT_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('🏡 Home', callback_data='home'),
+        InlineKeyboardButton('❔ Help', callback_data='help'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
+        ]]
+    )
 
 @pyrogram.on_callback_query()
 async def cb_handler(bot, update):
@@ -18,7 +28,7 @@ async def cb_handler(bot, update):
 
     elif update.data == "help":
         await update.answer()
-        keyboard = InlineKeyboardMarkup(helpbutton)
+        keyboard = InlineKeyboardMarkup(HELP_BUTTONS)
         await update.message.edit_text(
             text=Translation.HELP_TEXT,
             reply_markup=keyboard,
@@ -27,7 +37,7 @@ async def cb_handler(bot, update):
 
     elif update.data == "about":
         await update.answer()
-        keyboard = InlineKeyboardMarkup(aboutbutton)
+        keyboard = InlineKeyboardMarkup(ABOUT_BUTTONS)
         await update.message.edit_text(
             text=Translation.ABOUT_TEXT,
             reply_markup=keyboard,

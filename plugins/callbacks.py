@@ -5,21 +5,19 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceRepl
 from pyrogram.errors import UserNotParticipant
 
 from translation import Translation
-    )
-    helpbutton = InlineKeyboardMarkup(
-        [[
+    
+    helpbutton = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('👲 About', callback_data='about'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
-    )
-    aboutbutton = InlineKeyboardMarkup(
-        [[
+    
+    aboutbutton = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('❔ Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
-    )
+    
 
 @pyrogram.on_callback_query()
 async def cb_handler(bot, update):

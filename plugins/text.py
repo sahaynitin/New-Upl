@@ -24,8 +24,7 @@ from pyrogram.errors import UserNotParticipant
 
 
 
-    startbutton = InlineKeyboardMarkup(
-        [[
+    startbutton = [[
         InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
         InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
         ],[

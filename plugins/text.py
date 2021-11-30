@@ -24,18 +24,11 @@ from pyrogram.errors import UserNotParticipant
 
 
 
-    startbutton = [[
-        InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
-        InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
-        ],[
-        InlineKeyboardButton('❔ Help', callback_data='help'),
-        InlineKeyboardButton('⛔ Close', callback_data='close')
-        ]]
-    )
+
 @Client.on_message(pyrogram.filters.command(["start"]))
 async def text(bot, update):
     await update.reply_text(Translation.START_TEXT.format(update.from_user.first_name),
-        reply_markup= starbutton,
+        reply_markup= translation.starbuttons,
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id

@@ -6,14 +6,14 @@ from pyrogram.errors import UserNotParticipant
 
 from translation import Translation
 
-    HELP_BUTTONS = InlineKeyboardMarkup(
+    helpbutton = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('👲 About', callback_data='about'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
-    ABOUT_BUTTONS = InlineKeyboardMarkup(
+    aboutbutton = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('❔ Help', callback_data='help'),
@@ -28,7 +28,7 @@ async def cb_handler(bot, update):
 
     elif update.data == "help":
         await update.answer()
-        keyboard = InlineKeyboardMarkup(HELP_BUTTONS)
+        keyboard = InlineKeyboardMarkup(helpbutton)
         await update.message.edit_text(
             text=Translation.HELP_TEXT,
             reply_markup=keyboard,
@@ -37,7 +37,7 @@ async def cb_handler(bot, update):
 
     elif update.data == "about":
         await update.answer()
-        keyboard = InlineKeyboardMarkup(ABOUT_BUTTONS)
+        keyboard = InlineKeyboardMarkup(aboutbutton)
         await update.message.edit_text(
             text=Translation.ABOUT_TEXT,
             reply_markup=keyboard,

@@ -38,7 +38,7 @@ class Translation(object):
  **📚 <b>Library :** [Pyrogram v1.2.0](https://pyrogram.org)</b>\n
  **🌟 <b>Server :** [Heroku](https://heroku.com)</b>\n
 """
-    startbuttons = [[
+     START_BUTTON = [[
         InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
         InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
         ],[
@@ -46,13 +46,13 @@ class Translation(object):
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     
-    helpbutton = [[
+    HELP_BUTTON = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('👲 About', callback_data='about'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     
-    aboutbutton = [[
+    ABOUT_BUTTON = [[
         InlineKeyboardButton('🏡 Home', callback_data='home'),
         InlineKeyboardButton('❔ Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')

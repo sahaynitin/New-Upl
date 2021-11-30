@@ -38,7 +38,7 @@ class Translation(object):
  **📚 <b>Library :** [Pyrogram v1.2.0](https://pyrogram.org)</b>\n
  **🌟 <b>Server :** [Heroku](https://heroku.com)</b>\n
 """
-    START_BUTTONS = InlineKeyboardMarkup(
+    startbuttons = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
         InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')

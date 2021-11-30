@@ -14,7 +14,7 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 
-from script import script
+from translation import Translation
 
 import pyrogram
 
@@ -24,7 +24,7 @@ from pyrogram.errors import UserNotParticipant
 
 
 
-    START_BUTTONS = InlineKeyboardMarkup(
+    startbutton = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
         InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
@@ -35,8 +35,8 @@ from pyrogram.errors import UserNotParticipant
     )
 @Client.on_message(pyrogram.filters.command(["start"]))
 async def text(bot, update):
-    await update.reply_text(script.START_TEXT.format(update.from_user.first_name),
-        reply_markup= START_BUTTONS,
+    await update.reply_text(Translation.START_TEXT.format(update.from_user.first_name),
+        reply_markup= starbutton,
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id

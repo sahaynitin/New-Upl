@@ -38,8 +38,6 @@ class Translation(object):
  **📚 <b>Library :** [Pyrogram v1.2.0](https://pyrogram.org)</b>\n
  **🌟 <b>Server :** [Heroku](https://heroku.com)</b>\n
 """
-
-    )
     IFLONG_FILE_NAME = " Only 64 characters can be named . "
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
